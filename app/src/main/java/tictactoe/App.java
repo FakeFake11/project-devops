@@ -14,7 +14,8 @@ public final class App {
      */
     public static void main (final String[] args) {
         SwingUtilities.invokeLater(() -> {
-
+            MyWindow window = new JFrame("window");
+            window.setVisible(true);
         });
     }
 }
