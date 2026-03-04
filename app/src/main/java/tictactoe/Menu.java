@@ -6,10 +6,27 @@ import java.awt.GridLayout;
 import java.awt.Font;
 import java.awt.Color;
 
+/**
+ * Menu is the main class for the game tic-tac-toe.
+ *
+ * @author <name here>
+ */
+
 public class Menu extends JPanel {
     private JFrame window;
     // Need the file that has the game logic here
 
+    /**
+     *Creates menu panel that contains:
+     <ul>
+     *  <li>Title label</li>
+     *  <li>Start button</li>
+     *  <li>Quit button</li>
+     *</ul>
+     *
+     * @param window the parent JFrame used as a container
+     * @param TBD the game panel that starts when user presses start and chooses the players
+     */
     public Menu(JFrame window) {
         this.window = window;
         // Need the file that has the game logic here "this.<file> = <file>;""
