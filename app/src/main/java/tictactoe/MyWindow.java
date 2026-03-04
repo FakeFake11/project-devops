@@ -15,6 +15,15 @@ public final class MyWindow extends JFrame {
     private boolean isXTurn = true;
     private JButton[] buttons = new JButton[9];
     private JLabel statusLabel;
+    private Logic logic;
+
+    public void setIsXTurn(boolean isXTurn) {
+        this.isXTurn = isXTurn;
+    }
+
+    public boolean getIsXTurn() {
+        return isXTurn;
+    }
 
     public MyWindow() {
         super("Professional Tic-Tac-Toe");
@@ -22,7 +31,7 @@ public final class MyWindow extends JFrame {
         setLayout(new BorderLayout());
         statusLabel = new JLabel("Player X's Turn", JLabel.CENTER);
         JPanel gridPanel = new JPanel(new GridLayout(3, 3));
-
+        logic = new GameLogic(this, statusLabel, buttons);
 
         for (int i = 0; i < 9; i++) {
             buttons[i] = new JButton("");
@@ -35,7 +44,7 @@ public final class MyWindow extends JFrame {
             buttons[i].addActionListener(e -> {
                 if (buttons[index].getText().equals("")) {
                     buttons[index].setText(isXTurn ? "X" : "O");
-                    checkWinner();
+                    logic.checkWinner();
                     isXTurn = !isXTurn;
 
                     statusLabel.setText(isXTurn ? "Player X's Turn" : "Player O's Turn");
@@ -52,29 +61,4 @@ public final class MyWindow extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    private void checkWinner() {
-        int[][] winConditions = {
-            {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // Rows
-            {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // Columns
-            {0, 4, 8}, {2, 4, 6}             // Diagonals
-        };
-
-        for (int[] pos : winConditions) {
-            String b1 = buttons[pos[0]].getText();
-            String b2 = buttons[pos[1]].getText();
-            String b3 = buttons[pos[2]].getText();
-
-            if (!b1.equals("") && b1.equals(b2) && b2.equals(b3)) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Player " + b1 + " wins!");
-                resetBoard();
-            }
-        }
-    }
-
-
-    private void resetBoard() {
-        for (JButton b : buttons) b.setText("");
-        isXTurn = true;
-        statusLabel.setText("Player X's Turn");
-    }
 }
