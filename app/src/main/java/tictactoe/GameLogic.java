@@ -1,12 +1,14 @@
 package tictactoe;
 
 import javax.swing.JLabel;
+import javax.swing.JButton;
 
 public final class GameLogic implements Logic{
 
     private JLabel statusLabel;
+    private JButton[] buttons;
 
-    public GameLogic(JLabel statusLabel) {
+    public GameLogic(JLabel statusLabel, JButton[] buttons) {
         this.statusLabel = statusLabel;
     }
 
