@@ -1,11 +1,8 @@
 package tictactoe;
 
-import javax.swing.JFrame;
-import javax.swing.JButton;
-import java.awt.GridLayout;
-import java.awt.Font;
-import java.awt.Color;
-
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 /**
  * Menu is the main class for the game tic-tac-toe.
  *
