@@ -7,6 +7,7 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
+import javax.swing.JPanel;
 
 
 public final class MyWindow extends JFrame {
@@ -19,6 +20,7 @@ public final class MyWindow extends JFrame {
         super("Professional Tic-Tac-Toe");
         setLayout(new BorderLayout());
         statusLabel = new JLabel("Player X's Turn", JLabel.CENTER);
+        JPanel gridPanel = new JPanel(new GridLayout(3, 3));
 
         for (int i = 0; i < 9; i++) {
             buttons[i] = new JButton("");
