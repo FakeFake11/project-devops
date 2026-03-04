@@ -19,14 +19,37 @@ public class Menu extends JPanel {
 
         JButton startButton = new JButton("Start");
         startButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Centres the object
-        startButton.addActionListener(ActionEvent e) {
-        }
+        startButton.addActionListener(new ActionListener() {
+            @override
+            public void actionPerformed(Actionvent e) {
+
+                JDialog dialog = new JDialog(Menu);
+
+                JPanel dialogPanel = new JPanel();
+                dialogPanel.setLayout(new BoxLayout(dialogPanel, BoxLayout.Y_AXIS));
+
+                JLabel dialogLabel =  new JLabel("Choose how many players");
+                JButton onePlayer = new JButton("1 Player");
+                JButton twoPlayer = new JButton("2 Players");
+
+
+                dialogLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+                onePlayer.setAlignmentX(Component.CENTER_ALIGNMENT);
+                twoPlayer.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                dialogPanel.add(dialogLabel);
+                dialogPanel.add(onePlayer);
+                dialogPanel.add(twoPlayer);
+
+                dialog.add(dialogPanel);
+                dialog.setLocationRelativeTo()
+                dialog.setVisible(true);
+            }
+        });
 
         JButton quitButton = new JButton("Quit"); // Button for quitting the game
         quitButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Centres the object
-        quitButton.addActionListener(ActionEvent e) {
-
-        }
+        quitButton.addActionListener(e -> System.exit(0));
 
         add(titleLabel);
         add(startButton);
