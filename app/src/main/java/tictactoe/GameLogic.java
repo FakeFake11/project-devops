@@ -39,7 +39,7 @@ public final class GameLogic implements Logic{
 
     public void resetBoard() {
         for (JButton b : buttons) b.setText("");
-        isXTurn = true;
+        parentWindow.setIsXTurn(true);
         statusLabel.setText("Player X's Turn");
     }
 }
