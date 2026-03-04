@@ -17,6 +17,7 @@ public final class MyWindow extends JFrame {
     public MyWindow() {
         super("Professional Tic-Tac-Toe");
         setLayout(new GridLayout(3, 3));
+        statusLabel = new JLabel("Player X's Turn", JLabel.CENTER);
 
         for (int i = 0; i < 9; i++) {
             buttons[i] = new JButton("");
