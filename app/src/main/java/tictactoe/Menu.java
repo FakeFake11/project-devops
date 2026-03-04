@@ -14,8 +14,9 @@ public class Menu extends JPanel {
     private void initialize() {
         setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5))
         JButton startButton = new JButton("Start");
+        add(startButton);
 
         JButton quitButton = new JButton("Quit");
+        add(quitButton);
     }
-
 }
