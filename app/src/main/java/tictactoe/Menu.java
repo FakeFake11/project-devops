@@ -33,26 +33,42 @@ public class Menu extends JPanel {
         initialize();
     }
 
-    private int playerCount = 0;
+    private int playerCount = 0; // Playercount is used in start buttons Actionlistener method to decide how many players will play the game
 
+
+    /**
+     * This method creates the title, start button and quit buttons for the menu panel.
+     *
+     */
     private void initialize() {
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); // BoxLayout should make the items inside from top to bottom
-        JLabel titleLabel = new JLabel("Tic-Tac-Toe");
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); // BoxLayout should make the items inside from top to bottom when its Y.AXIS
+        JLabel titleLabel = new JLabel("Tic-Tac-Toe"); // Label object
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT); // Centres the object
 
-
-        JButton startButton = new JButton("Start");
+        JButton startButton = new JButton("Start"); // Button object
         startButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Centres the object
         startButton.addActionListener(new ActionListener() {
+
+            /**
+             * This creates a panel that allows the user to decide the playercount
+             *
+             * @param Actionevent ActionEvent is Actionlisteners method
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
-                JDialog dialog = new JDialog(window, "Choose your players", true);
+                /**
+                 * Creates the pop up where user can choose the playercount
+                 * takes the arguments "parent window", "string" and "boolean"
+                 * window is the parent frame
+                 * string is the title
+                 * true makes the panel modal which means that it blocks access to the owner
+                 */
+                JDialog dialog = new JDialog(window, "Choose your players", true); // Creates object "dialog"
 
                 JPanel dialogPanel = new JPanel();
-                dialogPanel.setLayout(new BoxLayout(dialogPanel, BoxLayout.Y_AXIS));
+                dialogPanel.setLayout(new BoxLayout(dialogPanel, BoxLayout.Y_AXIS)); // Makes the objects inside to go from top to bottom
 
-                JLabel dialogLabel =  new JLabel("Choose how many players");
-
+                JLabel dialogLabel =  new JLabel("Choose how many players"); // Label object, used as a title for the dialog
 
                 JButton onePlayer = new JButton("1 Player");
                 onePlayer.addActionListener(e -> {
