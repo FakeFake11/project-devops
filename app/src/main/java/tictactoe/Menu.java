@@ -65,7 +65,14 @@ public class Menu extends JPanel {
                  */
                 JDialog dialog = new JDialog(window, "Choose your players", true); // Creates object "dialog"
 
-                JPanel dialogPanel = new JPanel();
+
+                /**
+                 * <p>DialogPanel holds the dialoglabel, playerOne button and playerTwo button</p>
+                 * dialogLabel is used as a title
+                 * buttons decide how many players are playing
+                 */
+                JPanel dialogPanel = new JPanel(); // creates object "dialogPanel"
+
                 dialogPanel.setLayout(new BoxLayout(dialogPanel, BoxLayout.Y_AXIS)); // Makes the objects inside to go from top to bottom
 
                 JLabel dialogLabel =  new JLabel("Choose how many players"); // Label object, used as a title for the dialog
@@ -73,29 +80,31 @@ public class Menu extends JPanel {
                 JButton onePlayer = new JButton("1 Player");
                 onePlayer.addActionListener(e -> {
                     playerCount = 1;
-                    dialog.dispose();
+                    dialog.dispose(); // Closes the pop up
                 });
 
                 JButton twoPlayer = new JButton("2 Players");
                  twoPlayer.addActionListener(e -> {
                     playerCount = 2;
-                    dialog.dispose();
+                    dialog.dispose(); // Closes the pop up
                 });
 
 
-                dialogLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-                onePlayer.setAlignmentX(Component.CENTER_ALIGNMENT);
-                twoPlayer.setAlignmentX(Component.CENTER_ALIGNMENT);
+                dialogLabel.setAlignmentX(Component.CENTER_ALIGNMENT); // Centers label
+                onePlayer.setAlignmentX(Component.CENTER_ALIGNMENT); // Centers button 1
+                twoPlayer.setAlignmentX(Component.CENTER_ALIGNMENT); // Centers button 2
 
+                // Lets add the items to the dialogPanel
                 dialogPanel.add(dialogLabel);
                 dialogPanel.add(onePlayer);
                 dialogPanel.add(twoPlayer);
 
+                // Lets add the dialogPanel to the dialog
                 dialog.add(dialogPanel);
 
-                dialog.pack();
-                dialog.setLocationRelativeTo(window);
-                dialog.setVisible(true);
+                dialog.pack(); // Make sure it fits
+                dialog.setLocationRelativeTo(window); // Center the pop up
+                dialog.setVisible(true); // Shows the pop up
 
                 // Need to add the method to go to the game here "<file>.<method>(playercount);" (playercount is private field in menu class)
             }
