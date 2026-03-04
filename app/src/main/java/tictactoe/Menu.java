@@ -12,18 +12,18 @@ public class Menu extends JPanel {
     }
 
     private void initialize() {
-        setLayout(new BoxLayout(BoxLayout.Y_AXIS, 10, 5));
+        setLayout(new BoxLayout(BoxLayout.Y_AXIS, 10, 5)); // BoxLayout should make the items inside from top to bottom
         JLabel titleLabel = new JLabel("Tic-Tac-Toe");
-        titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT); // Centres the object
 
 
         JButton startButton = new JButton("Start");
-        startButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        startButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Centres the object
         startButton.addActionListener(ActionEvent e) {
         }
 
-        JButton quitButton = new JButton("Quit");
-        quitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JButton quitButton = new JButton("Quit"); // Button for quitting the game
+        quitButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Centres the object
         quitButton.addActionListener(ActionEvent e) {
 
         }
