@@ -4,8 +4,9 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 
 
-// Game Loic handles the core game logic and rule processing.
-
+/**
+ *  Game Loic handles the core game logic and rule processing.
+*/
 public final class GameLogic implements Logic {
 
     private MyWindow parentWindow;
