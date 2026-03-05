@@ -8,6 +8,7 @@ public final class MyWindow extends JFrame {
     private JButton[] buttons = new JButton[9];
     private JLabel statusLabel;
     private Logic logic;
+    private int moveCount = 0;
 
     public void setIsXTurn(boolean isXTurn) { this.isXTurn = isXTurn; }
     public boolean getIsXTurn() { return isXTurn; }
