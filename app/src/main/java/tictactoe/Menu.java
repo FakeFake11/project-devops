@@ -24,35 +24,12 @@ public class Menu extends JPanel {
         JButton startButton = new JButton("Start");
         startButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JButton startButton = new JButton("Start"); // Button object
-        startButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Centres the object
         startButton.addActionListener(new ActionListener() {
-
-            /**
-             * This creates a panel that allows the user to decide the playercount
-             *
-             * @param Actionevent ActionEvent is Actionlisteners method
-             */
             @Override
             public void actionPerformed(ActionEvent e) {
-                /**
-                 * Creates the pop up where user can choose the playercount
-                 * takes the arguments "parent window", "string" and "boolean"
-                 * window is the parent frame
-                 * string is the title
-                 * true makes the panel modal which means that it blocks access to the owner
-                 */
-                JDialog dialog = new JDialog(window, "Choose your players", true); // Creates object "dialog"
-
-
-                /**
-                 * <p>DialogPanel holds the dialoglabel, playerOne button and playerTwo button</p>
-                 * dialogLabel is used as a title
-                 * buttons decide how many players are playing
-                 */
-                JPanel dialogPanel = new JPanel(); // creates object "dialogPanel"
-
-                dialogPanel.setLayout(new BoxLayout(dialogPanel, BoxLayout.Y_AXIS)); // Makes the objects inside to go from top to bottom
+                JDialog dialog = new JDialog(window, "Choose your players", true);
+                JPanel dialogPanel = new JPanel();
+                dialogPanel.setLayout(new BoxLayout(dialogPanel, BoxLayout.Y_AXIS));
 
                 JLabel dialogLabel =  new JLabel("Choose how many players"); // Label object, used as a title for the dialog
 
