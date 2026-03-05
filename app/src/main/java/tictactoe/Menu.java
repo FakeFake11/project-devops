@@ -17,7 +17,9 @@ public class Menu extends JPanel {
         this.window = window;
         initialize();
     }
-
+/**
+* Initializes all menu UI components and layout.
+*/
     private void initialize() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
