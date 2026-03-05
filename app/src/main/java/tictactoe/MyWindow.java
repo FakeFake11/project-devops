@@ -21,8 +21,10 @@ public final class MyWindow extends JFrame {
     }
 
     public void initializeGame(int playerCount) {
+        this.moveCount = 0;
         this.getContentPane().removeAll();
         this.setLayout(new BorderLayout());
+        
         statusLabel = new JLabel("Player X's Turn", JLabel.CENTER);
         JPanel gridPanel = new JPanel(new GridLayout(3, 3));
         logic = new GameLogic(this, statusLabel, buttons);
