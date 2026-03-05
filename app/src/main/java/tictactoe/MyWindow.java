@@ -40,7 +40,7 @@ public final class MyWindow extends JFrame {
     }
     /**
      * Getter for isXTurn.
-     * @return The boolean field for checking 
+     * @return The boolean field for checking
      * if it's the player X's turn
      */
     public boolean getIsXTurn() {
@@ -57,12 +57,16 @@ public final class MyWindow extends JFrame {
         setLocationRelativeTo(null);
     }
 
+/**
+ * Initializes the game board for the specified number of players.
+ * Sets up buttons, status label, and action listeners.
+ */
     public void initializeGame(int playerCount) {
         this.isAiEnabled = (playerCount == 1);
         this.moveCount = 0;
         this.getContentPane().removeAll();
         this.setLayout(new BorderLayout());
-        
+
         statusLabel = new JLabel("Player X's Turn", JLabel.CENTER);
         JPanel gridPanel = new JPanel(new GridLayout(3, 3));
         logic = new GameLogic(this, statusLabel, buttons);
@@ -83,11 +87,11 @@ public final class MyWindow extends JFrame {
                         statusLabel.setText("Player " + (isXTurn ? "X" : "O") + " Wins!");
                         for (JButton b : buttons) b.setEnabled(false);
                         showEndGameOptions();
-                    } 
+                    }
                     else if (moveCount == 9) {
                         statusLabel.setText("It's a Draw!");
                         showEndGameOptions();
-                    } 
+                    }
                     else {
                         isXTurn = !isXTurn;
                         statusLabel.setText("Player " + (isXTurn ? "X" : "O") + "'s Turn");
@@ -100,7 +104,7 @@ public final class MyWindow extends JFrame {
             });
             gridPanel.add(buttons[i]);
         }
-        
+
         add(gridPanel, BorderLayout.CENTER);
         add(statusLabel, BorderLayout.NORTH);
         this.revalidate();
@@ -110,10 +114,10 @@ public final class MyWindow extends JFrame {
     private void showEndGameOptions() {
         JPanel bottomPanel = new JPanel();
         JButton menuButton = new JButton("Back to Menu");
-        
+
         menuButton.addActionListener(e -> {
             this.getContentPane().removeAll();
-            this.add(new Menu(this)); 
+            this.add(new Menu(this));
             this.revalidate();
             this.repaint();
         });
