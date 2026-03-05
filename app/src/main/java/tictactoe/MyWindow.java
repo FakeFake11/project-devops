@@ -18,7 +18,9 @@ public final class MyWindow extends JFrame {
     public void setIsXTurn(boolean isXTurn) {
         this.isXTurn = isXTurn;
     }
-
+    /**
+     * Getter for isXTurn.
+     */
     public boolean getIsXTurn() {
         return isXTurn;
     }
