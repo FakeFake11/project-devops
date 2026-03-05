@@ -15,4 +15,10 @@ public interface Logic {
      * game's state.
      */
     void resetBoard();
+    /**
+     * Calculates a valid move for the AI by identifying empty positions 
+     * on the board and selecting one at random.
+     * @return The index of the chosen button (0-8), or -1 if no moves are available.
+     */
+    int getRandomMove();
 }

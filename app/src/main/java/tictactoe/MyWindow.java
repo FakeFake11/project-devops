@@ -2,6 +2,7 @@ package tictactoe;
 
 import javax.swing.*;
 import java.awt.*;
+import javax.swing.SwingUtilities;
 
 /**
  * MyWindow handles the main GUI window for the Tic-Tac-Toe game.
@@ -32,6 +33,7 @@ public final class MyWindow extends JFrame {
      */
     private Logic logic;
     private int moveCount = 0;
+    private boolean isAiEnabled = true; // Temporary default for testing
 
     public void setIsXTurn(boolean isXTurn) { this.isXTurn = isXTurn; }
     public boolean getIsXTurn() { return isXTurn; }
@@ -44,6 +46,7 @@ public final class MyWindow extends JFrame {
     }
 
     public void initializeGame(int playerCount) {
+        this.isAiEnabled = (playerCount == 1);
         this.moveCount = 0;
         this.getContentPane().removeAll();
         this.setLayout(new BorderLayout());
@@ -76,6 +79,10 @@ public final class MyWindow extends JFrame {
                     else {
                         isXTurn = !isXTurn;
                         statusLabel.setText("Player " + (isXTurn ? "X" : "O") + "'s Turn");
+
+                        if (isAiEnabled && !isXTurn) {
+                            SwingUtilities.invokeLater(() -> performAiMove());
+                        }
                     }
                 }
             });
@@ -106,4 +113,16 @@ public final class MyWindow extends JFrame {
         this.revalidate();
         this.repaint();
     }
+    /**
+     * Executes AI move by retrieving a random available index 0-9
+     * from the logic and simulating a button click.
+     */
+    private void performAiMove() {
+    int moveIndex = logic.getRandomMove();
+    if (moveIndex != -1) {
+        buttons[moveIndex].doClick();
+    }
+}
+
+
 }
