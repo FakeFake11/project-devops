@@ -13,6 +13,10 @@ public final class GameLogic implements Logic {
      */
     private GameLogic() { }
 
+    /**
+     * Constructor for GameLogic that takes
+     * a MyWindow, JLabel and Jbutton[] instances as arguments.
+     */
     public GameLogic(MyWindow parentWindow, JLabel statusLabel, JButton[] buttons) {
         this.parentWindow = parentWindow;
         this.statusLabel = statusLabel;
