@@ -122,7 +122,10 @@ public final class MyWindow extends JFrame {
         this.revalidate();
         this.repaint();
     }
-
+    /**
+     * Executes AI move by retrieving a random available index 0-9
+     * from the logic and simulating a button click.
+     */
     private void performAiMove() {
     int moveIndex = logic.getRandomMove();
     if (moveIndex != -1) {
