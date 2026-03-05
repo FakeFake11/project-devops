@@ -58,6 +58,7 @@ public final class MyWindow extends JFrame {
     }
 
     public void initializeGame(int playerCount) {
+        this.isAiEnabled = (playerCount == 1);
         this.moveCount = 0;
         this.getContentPane().removeAll();
         this.setLayout(new BorderLayout());
