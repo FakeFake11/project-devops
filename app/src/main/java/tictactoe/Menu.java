@@ -17,6 +17,9 @@ public class Menu extends JPanel {
     private void initialize() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
+        JLabel titleLabel = new JLabel("Tic-Tac-Toe");
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 30));
+        titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
     /**
      * This method creates the title, start button and quit buttons for the menu panel.
