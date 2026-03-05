@@ -15,7 +15,10 @@ public final class MyWindow extends JFrame {
     private Logic logic;
     private int moveCount = 0;
 
+    /** Sets which player's turn it is. */
     public void setIsXTurn(boolean isXTurn) { this.isXTurn = isXTurn; }
+
+    /** Returns true if it's X's turn, false otherwise. */
     public boolean getIsXTurn() { return isXTurn; }
 
     public MyWindow() {
