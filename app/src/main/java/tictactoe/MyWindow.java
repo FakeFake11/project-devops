@@ -9,19 +9,33 @@ import java.awt.*;
  */
 
 public final class MyWindow extends JFrame {
+
+    /**
+     * A boolean for checking whether it's
+     * the player X's turn.
+     */
     private boolean isXTurn = true;
+    /**
+     * The array of JButtons that form the tictactoe
+     * grid.
+     */
     private JButton[] buttons = new JButton[9];
+    /**
+     * The JLabel used for displaying which player's
+     * turn it is.
+     */
     private JLabel statusLabel;
+    /**
+     * The instance of class implementing Logic.
+     * Used for checking the winner of the game
+     * and resetting the board.
+     */
     private Logic logic;
     private int moveCount = 0;
 
-    /** Sets which player's turn it is. */
     public void setIsXTurn(boolean isXTurn) { this.isXTurn = isXTurn; }
-
-    /** Returns true if it's X's turn, false otherwise. */
     public boolean getIsXTurn() { return isXTurn; }
 
-    /** Initializes the main Tic-Tac-Toe window and sets default size and behavior. */
     public MyWindow() {
         super("Tic-Tac-Toe");
         setSize(400, 450);
