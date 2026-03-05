@@ -5,6 +5,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Menu panel for the Tic-Tac-Toe game.
+ * Displays the title and allows the player to start or quit the game.
+ */
 public class Menu extends JPanel {
     private JFrame window;
     private int playerCount = 0;
@@ -13,7 +17,9 @@ public class Menu extends JPanel {
         this.window = window;
         initialize();
     }
-
+/**
+* Initializes all menu UI components and layout.
+*/
     private void initialize() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
@@ -27,7 +33,7 @@ public class Menu extends JPanel {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JDialog dialog = new JDialog(window, "Choose your players", true);
+                JDialog dialog = new JDialog(window, "Select number of players", true);
                 JPanel dialogPanel = new JPanel();
                 dialogPanel.setLayout(new BoxLayout(dialogPanel, BoxLayout.Y_AXIS));
 
