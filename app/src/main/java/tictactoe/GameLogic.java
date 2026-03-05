@@ -16,6 +16,7 @@ public final class GameLogic implements Logic {
     /**
      * Constructor for GameLogic that takes
      * a MyWindow, JLabel and Jbutton[] instances as arguments.
+     * @param parentWindow The composite MyWindow that has this as a field
      */
     public GameLogic(MyWindow parentWindow, JLabel statusLabel, JButton[] buttons) {
         this.parentWindow = parentWindow;
