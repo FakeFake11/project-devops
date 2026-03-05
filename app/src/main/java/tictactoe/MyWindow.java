@@ -72,7 +72,9 @@ public final class MyWindow extends JFrame {
         this.revalidate();
         this.repaint();
     }
-
+    /**
+    * Displays the end-of-game options, allowing the player to return to the menu.
+    */
     private void showEndGameOptions() {
         JPanel bottomPanel = new JPanel();
         JButton menuButton = new JButton("Back to Menu");
