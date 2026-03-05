@@ -79,7 +79,11 @@ public final class GameLogic implements Logic {
     }
     return available;
 }
-
+/**
+ * Selects a random available move for the AI
+ * by checking empty buttons and picking one at random.
+ * @return The index of the chosen button (0-8), or -1 if no moves are available.
+ */
 public int getRandomMove() {
     List<Integer> available = getAvailableMoves();
     if (available.isEmpty()) return -1;
