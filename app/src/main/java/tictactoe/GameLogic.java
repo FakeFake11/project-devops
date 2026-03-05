@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Implements the Logic interface for Tic-Tac-Toe.
+ * Handles checking winners, resetting the board,
+ * and calculating AI moves.
+ */
 public final class GameLogic implements Logic {
 
     private MyWindow parentWindow;
@@ -53,7 +58,7 @@ public final class GameLogic implements Logic {
                 return true;
             }
         }
-        
+
         return false;
     }
     /**
@@ -95,7 +100,7 @@ private boolean wouldWin(int index, String mark) {
 }
 
     /**
-     * Selects a move by prioritizing winning, then blocking, 
+     * Selects a move by prioritizing winning, then blocking,
      * then falling back to random choice.
      */
     public int getSmartMove() {
