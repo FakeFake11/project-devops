@@ -8,6 +8,10 @@ public final class GameLogic implements Logic {
     private MyWindow parentWindow;
     private JLabel statusLabel;
     private JButton[] buttons;
+    /**
+     * Private no-param constructor for GameLogic
+     */
+    private GameLogic() { }
 
     public GameLogic(MyWindow parentWindow, JLabel statusLabel, JButton[] buttons) {
         this.parentWindow = parentWindow;
