@@ -33,7 +33,7 @@ public class Menu extends JPanel {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JDialog dialog = new JDialog(window, "Choose your players", true);
+                JDialog dialog = new JDialog(window, "Select number of players", true);
                 JPanel dialogPanel = new JPanel();
                 dialogPanel.setLayout(new BoxLayout(dialogPanel, BoxLayout.Y_AXIS));
 
