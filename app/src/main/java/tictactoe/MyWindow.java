@@ -128,7 +128,7 @@ public final class MyWindow extends JFrame {
      * from the logic and simulating a button click.
      */
     private void performAiMove() {
-    int moveIndex = logic.getRandomMove();
+    int moveIndex = logic.getSmartMove();
     if (moveIndex != -1) {
         buttons[moveIndex].doClick();
     }
